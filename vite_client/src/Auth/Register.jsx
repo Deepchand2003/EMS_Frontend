@@ -53,7 +53,7 @@ const Register = () => {
         }
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/admin/auth/register`, {
+            const response = await fetch(`${process.env.VITE_API_URL}/api/v1/admin/auth/register`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
