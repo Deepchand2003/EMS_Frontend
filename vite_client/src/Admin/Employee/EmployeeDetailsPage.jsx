@@ -602,7 +602,7 @@ const EmployeeDetailsPage = () => {
                               variant="outlined" 
                               size="small"
                               color="secondary"
-                              onClick={() => window.open(`http://localhost:5000${doc.filePath}`, '_blank')}
+                              onClick={() => window.open(`${process.env.REACT_APP_API_URL}${doc.filePath}`, '_blank')}
                               fullWidth={isMobile}
                             >
                               View

@@ -26,13 +26,13 @@ const EmployeePayroll = () => {
         };
 
         const employeeResponse = await axios.get(
-          'http://localhost:5000/api/employees/me',
+          `${process.env.REACT_APP_API_URL}/api/employees/me`,
           config
         );
         setEmployeeData(employeeResponse.data);
 
         const payrollResponse = await axios.get(
-          'http://localhost:5000/api/payroll/employee',
+          `${process.env.REACT_APP_API_URL}/api/payroll/employee`,
           {
             ...config,
             params: { month: currentMonth, year: currentYear },
@@ -82,10 +82,10 @@ const EmployeePayroll = () => {
           <div className="flex justify-center">
             {employeeData.profileImage ? (
               <img
-                src={`http://localhost:5000/${employeeData.profileImage}`}
-                alt="Profile"
-                className="w-40 h-40 rounded-xl object-cover"
-              />
+                  src={`${process.env.REACT_APP_API_URL}/${employeeData.profileImage}`}
+                  alt="Profile"
+                  className="w-40 h-40 rounded-xl object-cover"
+                />
             ) : (
               <div className="w-40 h-40 flex items-center justify-center rounded-xl bg-blue-600 text-white text-4xl font-semibold">
                 {employeeData.name?.charAt(0)}
